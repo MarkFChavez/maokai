@@ -3,14 +3,14 @@
 
 <div id="body-1">
 	<div class="row">
-		<div class="small-12 columns">
+		<div class="large-12 columns">
 			<div class="row">
-				<div class="small-12 columns">
+				<div class="large-12 columns">
 					<h1> Maokai </h1>
 
-					<h5 style="color:#FFF;text-align:justify">
-						Tired of these whiteboard shits? Enter Maokai, here you can collaborate as a team, read/write and receive the latest updates of your projects with less hassle!
-					</h5>
+					<h6 style="text-align:justify">
+						Tired of these whiteboard shits? Enter Maokai, here you can collaborate as a team, read/write and receive the latest updates of your projects with less hassle! Definitely a must for freelancers out there!
+					</h6>
 
 					<div style="margin-top:20px">
 						<a href="#" class="large button">Read more</a>
@@ -20,3 +20,84 @@
 		</div>
 	</div>
 </div>
+
+<div id="body-2">
+	<div class="row">
+		<div class="large-12 columns">
+			<h1>MGMT has never been this easy!</h1>
+
+			<h6 style="text-align:justify">
+				Imagine having to write your schema on a piece of paper or maybe you are using an online tool for it, well that's one hell of a job! Your files are not manageable, they are not safe and more important, you have to manually store it somewhere you want to, preferrably on your hard drive. What if your computer crashes? The online tool you are using also crashes? Well good luck to that! Here at maokai, you can store all your files safely and still be able to collaborate with your team! What if maokai crashes? Nah, will not happen!
+			</h6>
+
+			<div style="margin-top:20px;float:right">
+				<a href="#" class="large success button">Get Started</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="body-3">
+	<div class="row">
+		<div class="large-12 columns">
+			<h1> Feedbacks from our users! </h1>
+		</div>
+	</div>
+
+	<% @feedbacks.in_groups_of(2, false) do |row| %>
+		<div class="row">
+			<% row.each do |feedback| %>
+				<div class="large-12 columns">
+					<div class="feedback-block">
+						<div class="row">
+							<div class="small-3 large-3 columns">
+								<div>
+									<a href="#" class="th radius"> <%= g(feedback.email, "") %> </a>
+								</div>
+							</div>
+
+							<div class="small-9 large-9 columns">
+								<div>
+									<blockquote style="color:#000;font-weight:bold">
+										<%= feedback.comment %>
+										<cite> <%= feedback.email %> </cite>
+									</blockquote>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	<% end %>
+</div>
+
+<footer id="footer">
+	<div class="row">
+		<div class="large-6 columns">
+			<h4 style="color:#FFF"> Contact Us! </h4>
+
+			<div>
+				<p> Email: los_populares@yahoo.com </p>
+				<p> Mobile: (+63) 939-913-5801 </p>
+			</div>
+		</div>
+
+		<div class="large-6 columns">
+			<h4 style="color:#FFF"> Stay in touch! </h4>
+
+			<div>
+				<span> <a href="#"> <%= image_tag "facebook-icon.png" %> </a> </span>
+				<span> <a href="#"> <%= image_tag "twitter-icon.png" %> </a> </span>
+				<span> <a href="#"> <%= image_tag "linkedin-icon.png" %> </a> </span>
+				<span> <a href="#"> <%= image_tag "gplus-icon.png" %> </a> </span>
+			</div>
+		</div>
+	</div>
+
+	<div class="row" style="margin-top:30px">
+		<div class="large-12 columns">
+			<p> Copyright &copy; 2013. Maokai </p>
+		</div>
+	</div>
+	</footer>

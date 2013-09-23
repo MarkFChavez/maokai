@@ -4,4 +4,8 @@ module ApplicationHelper
 			"Maokai | #{title}"
 		end
 	end
+
+	def g(email, klazz, options={})
+		gravatar_image_tag(email, class:klazz, gravatar: options)
+	end
 end
