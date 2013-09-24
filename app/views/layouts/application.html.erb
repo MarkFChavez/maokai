@@ -44,9 +44,19 @@
 				<li> <a href="#">Contact</a> </li>
 				<li class="divider"></li>
 				<li class="divider"></li>
-				<li class="has-form">
-					<%= link_to "Sign in with Facebook", "#", class:"small button success radius" %>
-				</li>
+				<% if current_user %>
+					<li class="has-dropdown">
+						<%= link_to current_user.name.titleize, "#", style:"" %>
+						<ul class="dropdown">
+							<li> <a href="#"> Go to Dashboard </a> </li>
+							<li> <%= link_to "Logout", signout_path, method: :delete, confirm: "Get out?" %> </li>
+						</ul>
+					</li>
+				<% else %>
+					<li class="has-form">
+							<%= link_to "Sign in with Facebook", "/auth/facebook", class:"small button success radius" %>
+					</li>
+				<% end %>
 				<li class="divider"></li>
 			</ul>
 		</section>
